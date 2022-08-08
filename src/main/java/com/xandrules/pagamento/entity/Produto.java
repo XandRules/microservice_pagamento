@@ -22,4 +22,6 @@ public class Produto implements Serializable {
     @Column(name = "estoque", nullable = false, length = 10)
     private Integer estoque;
 
+
+
 }

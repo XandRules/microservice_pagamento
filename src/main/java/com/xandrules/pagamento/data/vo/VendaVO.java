@@ -1,6 +1,5 @@
 package com.xandrules.pagamento.data.vo;
 
-import com.xandrules.pagamento.entity.ProdutoVenda;
 import com.xandrules.pagamento.entity.Venda;
 import lombok.*;
 import org.modelmapper.ModelMapper;
@@ -21,7 +20,7 @@ public class VendaVO extends RepresentationModel<VendaVO> implements Serializabl
 
     private Long id;
     private Date data;
-    private List<ProdutoVenda> produtos;
+    private List<ProdutoVendaVO> produtos;
     private Double valorTotal;
 
     public static VendaVO create(Venda venda){
