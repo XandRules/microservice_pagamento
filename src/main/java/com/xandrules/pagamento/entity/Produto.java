@@ -1,6 +1,8 @@
 package com.xandrules.pagamento.entity;
 
+import com.xandrules.pagamento.data.vo.ProdutoVO;
 import lombok.*;
+import org.modelmapper.ModelMapper;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -15,13 +17,13 @@ import java.io.Serializable;
 @EqualsAndHashCode
 public class Produto implements Serializable {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id", nullable = false)
     private Long id;
 
     @Column(name = "estoque", nullable = false, length = 10)
     private Integer estoque;
 
-
+    public static Produto create(ProdutoVO produtoVO){
+        return new ModelMapper().map(produtoVO, Produto.class);
+    }
 
 }

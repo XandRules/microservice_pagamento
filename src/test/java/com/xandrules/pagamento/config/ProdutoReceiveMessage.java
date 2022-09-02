@@ -1,4 +1,4 @@
-package com.xandrules.pagamento.message;
+package com.xandrules.pagamento.config;
 
 import com.xandrules.pagamento.data.vo.ProdutoVO;
 import com.xandrules.pagamento.entity.Produto;
@@ -20,6 +20,7 @@ public class ProdutoReceiveMessage {
 
     @RabbitListener(queues = {"${crud.rabbitmq.queue}"})
     public void receive(@Payload ProdutoVO produtoVO){
+
         produtoRepository.save(Produto.create(produtoVO));
     }
 }
